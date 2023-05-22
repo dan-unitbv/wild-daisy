@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Programe TV</title>
+<link rel="icon" href="C:\Users\WIN10\Desktop\wild dasisy\logo.png" type="image">
+</head>		
+<body style="background-color:#9999ff;">
+
+<style>
+body {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header {
+  background-color: 	#F5F5DC;
+  padding:  30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: 	#F5F5DC;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color:		#8CBED6;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: 	#7BB661	;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.container {
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.nxt {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.nxt {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.nxt:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: center;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color:#3399ff;
+  padding: 2px 8px;
+  color: white;
+}
+
+.row:after {
+ text-align: center;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+text-align: center;
+  float: left;
+  width: 10%;
+}
+
+.demo {
+  opacity: 0.8;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <a href="wilddaisy.html" target="_self"><blockquote><font color="black"><b>Acasă</b></font></blockquote></a>
+  <a href="noutati.html" target="_self"><blockquote><font color="black"><b>Noutăți</b></font></blockquote></a>
+  <a href="contact.html" target="_self"><blockquote><font color="black"><b>Contact</b></font></blockquote></a>
+  <a class="active" href="programe.html" target="_self"><blockquote><font color="black"><b>Programe TV</b></font></blockquote></a>
+  <a href="info.html" target="_self"><blockquote><font color="black"><b>Despre noi</b></font></blockquote></a>
+  <a href="evenimente.html" target="_self"><blockquote><font color="black"><b>Evenimente</b></font></blockquote></a>
+  <a href="curand.html" target="_self"><blockquote><font color="black"><b>În curând</b></font></blockquote></a>
+  <a href="socials.html" target="_self"><blockquote><font color="black"><b>Urmărește-ne!</b></font></blockquote></a>  
+  </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+var mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<p style="text-align:right">
+<a href="contact.html" class="previous"><div class="topright"><img src="left.png" width="30" height="30"></a>
+<a href="info.html" class="next"><img src="right.png" width="30" height="30"></a></div></p>
+<h1><font color="white"><img src="logo.png" width="50" height="50"><strong>Programele TV disponibile acum pe Wild Daisy Explore</strong></font></h1></center>
+<br>
+<center>
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 10</div>
+    <img src="gardening.jpg" width="800" height="500">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 10</div>
+    <img src="fisher.jpg" width="800" height="500">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 10</div>
+    <img src="gold1.jpg" width="800" height="500">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 10</div>
+    <img src="pets1.webp" width="800" height="500">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 10</div>
+    <img src="cave1.jpg" width="800" height="500">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 10</div>
+    <img src="padure1.jpg" width="800" height="500">
+  </div>
+    <div class="mySlides">
+    <div class="numbertext">7 / 10</div>
+    <img src="monstri.jpg" width="800" height="500">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">8 / 10</div>
+    <img src="api1.jpg" width="800" height="500">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">9 / 10</div>
+    <img src="masini1.jpg" width="800" height="500">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">10 / 10</div>
+    <img src="daci.jpg" width="800" height="500">
+	</div>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="gardening.jpg" width="135" height="100"onclick="currentSlide(1)" alt="Grădinari Iscusiți">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fisher.jpg" width="135" height="100" onclick="currentSlide(2)" alt="Pescari la ananghie">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gold1.jpg" width="135" height="100" onclick="currentSlide(3)" alt="Căutătorii de aur din Carpați">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pets1.webp" width="135" height="100" onclick="currentSlide(4)" alt="Animale de companie jucăușe">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="cave1.jpg" width="135" height="100" onclick="currentSlide(5)" alt="Oamenii Peșterilor">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="padure1.jpg" width="135" height="100" onclick="currentSlide(6)" alt="Sălbăticia Românească">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="monstri.jpg" width="135" height="100" onclick="currentSlide(7)" alt="Monștrii Dunării">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="api1.jpg" width="135" height="100" onclick="currentSlide(8)" alt="Apicultorii din Vest">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="masini1.jpg" width="135" height="100" onclick="currentSlide(9)" alt="Mașini renovate">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="daci.jpg" width="135" height="100" onclick="currentSlide(10)" alt="Pe urmele dacilor">
+    </div>
+    
+  </div>
+</div>
+</center>
+<br>
+<center><hr color="yellow"></center>
+<blockquote><h2><font color="orange"><font color="yellow">✽</font>Grădinari Iscusiți</font></h2>
+<font color="white"><i>Grădinari Iscusiți, o emisiune pentru cei pasionați de grădinărit din care puteți învața de la zero arta grădinăritului și cum să iubiți plantele.  
+<br>
+<font color="yellow">✽</font>Maratoane de până la cinci episoade se întâlnesc zilnic pe Wild Daisy Explore, fiind una din cele mai populare emisiuni ale canalului TV.
+</i> </font>
+<br>
+<br>
+<center>
+<img src="gardening.jpg"width="350" height="250" >
+<img src="gardening.webp"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h2><font color="red"><font color="yellow">✽</font><a name="exactline2">Pescari la ananghie</a></font></h2>
+<font color="white"><i>Marea Neagră a oferit românilor nenumărate beneficii de-a lungul timpului dacă aceștia au reușit să se împace cu ea. Însă ce se poate întâmplă când un grup de pescari bătrâni declara război mării pentru supremație? Nimic bun.
+<br>
+<font color="yellow">✽</font>Pescari la ananghie, în fiecare zi, în afară de duminică, de la 19:00, numai la Wild Daisy Explore.</i> </font>
+<br>
+<br>
+<center>
+<img src="fisher.jpg"width="350" height="250" >
+<img src="man.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h3><font color="blue"><font color="yellow">✽</font><a name="exactline1">Căutătorii de aur din Carpați</a></font></h3>
+<font color="white"><i>Familia dependență de aur din Carpați se lupta din răsputeri pentru a găsi acea pepită ce le va schimba viață.
+<br>
+<font color="yellow">✽</font>În fiecare vineri, de la 20:30, numai la Wild Daisy Explore.</i> </font>
+<br>
+<br>
+<center>
+<img src="gold1.jpg"width="350" height="250" >
+<img src="gold2.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h3><font color="brown"><font color="yellow">✽</font><a name="exactline">Animale de companie jucăușe</a></font></h3>
+<font color="white"><i>Prietenii cei mai buni ai omului, animalele, pot fi de mare ajutor în situații periculoase datorită caracterului lor protector. Cu toate acestea, aceste animăluțe își petrec majoritatea vieții jucându-se și inveselindu-și stăpânii.
+<br>
+<font color="yellow">✽</font>Luni, miercuri și vineri dimineață de la 7:30 la 12:15. </i> </font>
+<br>
+<br>
+<center>
+<img src="pets1.webp"width="350" height="250">
+<img src="pets2.webp"width="350" height="250">
+<br>
+<hr color="yellow"></center>
+<h3><font color="black"><font color="yellow">✽</font>Oamenii Peșterilor</font></h3>
+<font color="white"><i>Unii oameni pur și simplu nu se simt în largul lor în locurile în care majoritatea oamenilor își petrec timpul, cum ar fi: parcuri, cafenele sau restaurante. Aceștia sunt Oamenii Peșterilor, ce dau la schimb lumina soarelui pentru o aventură de neuitat în peșterile din Munții Apuseni. 
+<br>
+<font color="yellow">✽</font>O emisiune deloc indicată pentru claustrofobi, joi și vineri de la 01:00 la 05:00 pe Wild Daisy Explore!</i> </font>
+<br>
+<br>
+<center>
+<img src="cave1.jpg"width="350" height="250" >
+<img src="cave2.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h3><font color="brown"><font color="yellow">✽</font>Sălbăticia Românească</font></h3>
+<font color="white"><i>Documentare despre peisajele de poveste ale României, de la Delta Dunării la cele mai înalte vârfuri din Munții Carpați.
+<br>
+<font color="yellow">✽</font>În fiecare după-amiază, de la 13:00 la 15:00, numai la Wild Daisy Explore.</i> </font>
+<br>
+<br>
+<center>
+<img src="padure1.jpg"width="350" height="250" >
+<img src="padure.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h4><font color="whote"><font color="yellow">✽</font><a name="exactline3">Monștrii Dunării</a></font></h4>
+<font color="white"><i>Ape ce la suprafață par liniștite, însă care ascund monștrii acvatici de temut ce an de an provoacă victime în rândul pescarilor și nu numai. Ioan și Minu cercetează diferite cazuri nerezolvate de-a lungul Dunării, căutând răspunsuri în adâncuri.
+<br>
+<font color="yellow">✽</font>Sâmbătă și duminică de la 16:00 la 19:30, alăturați-vă lor pentru a desluși aceste mistere!</i> </font>
+<br>
+<br>
+<center>
+<img src="monstri.jpg"width="350" height="250" >
+<img src="monstri1.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h4><font color="purple"><font color="yellow">✽</font>Apicultorii din Vest</font></h4>
+<font color="white"><i>Urmăriți viețile de zi cu zi ale acestor apicultori din Transilvania, ce zilnic se pun în fața a sute de albine ucigașe pentru a-și urmări pasiunea. Apicultorii din Vest este o emisiune relaxantă, însă ce oricând poate deveni înfricoșătoare din cauza imprevizibilității acestor insecte periculoase.
+<br>
+<font color="yellow">✽</font>Marți și joi, de la 17:00, numai la Wild Daisy Explore.</i> </font>
+<br>
+<br>
+<center>
+<img src="api1.jpg"width="350" height="250" >
+<img src="api2.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h4><font color="yellow"><font color="yellow">✽</font>Mașini Renovate</font></h4>
+<font color="white"><i>George și Eric au renunțat la slujbele lor de zi cu zi pentru a intra în industria autovehiculelor second-hand. Mica lor afacere supraviețuiește de la o mașină la alta, acordându-și numai câte o săptămâna pentru repararea unei rable, cei doi mecanici sunt întotdeauna in pericol de faliment.
+<br>
+<font color="yellow">✽</font>În fiecare seară, de la 21:30 la 23:30.</i> </font>
+<br>
+<br>
+<center>
+<img src="masini1.jpg"width="350" height="250" >
+<img src="masini2.jpg"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<h4><font color="green"><font color="yellow">✽</font>Pe urmele dacilor</font></h4>
+<font color="white"><i>Ce știm de fapt cu certitudine despre strămoșii noștrii? Arheologi de o viață, Mia și Tim merg pe urmele dacilor, încercând să deslușească misterul nașterii neamului românesc.
+<br>
+<font color="yellow">✽</font>În fiecare miercuri, de la 16:00 la 17:00, numai la Wild Daisy Explore.</i> </font>
+<br>
+<br>
+<center>
+<img src="daci.jpg"width="350" height="250" >
+<img src="daci.webp"width="350" height="250" >
+<br>
+<hr color="yellow"></center>
+<center><img src="ro.jpg" width="600" height="400"></center>
+<p><font color="white"><font color="yellow">✽</font><strong>Legendă:</strong></font></p>
+<ul>
+<small>
+  <li><font color="red">Pescari la ananghie</font></li>
+  <li><font color="white">Monștrii Dunării</font></li>
+  <li><font color="green">Pe urmele dacilor</font></li>
+  <li><font color="black">Oamenii Peșterilor</font></li>
+  <li><font color="purple">Apicultorii din Vest</font></li>
+  <li><font color="yellow">Mașini renovate</font></li>
+  <li><font color="blue">Căutătorii de aur din Carpați</font></li>
+  <li><font color="pink">Una cu natura</font></li>
+  </small>
+</ul>  
+</center>
+</blockquote>
+</body>
+</html>
