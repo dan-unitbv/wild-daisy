@@ -1,1 +1,1 @@
-# wild-daisy
+A simple HTML website about an imaginary television channel.
