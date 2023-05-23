@@ -1,1 +1,1 @@
-A simple HTML website about an imaginary television channel.
+A simple HTML website for an imaginary television channel.
